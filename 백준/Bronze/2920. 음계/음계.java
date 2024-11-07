@@ -9,15 +9,9 @@ public class Main {
             input[i] = sc.nextInt();
         }
 
-        int[] ascend = new int[8];
-        int[] decend = new int[8];
+        int[] ascend = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] decend = {8, 7, 6, 5, 4, 3, 2, 1};
 
-        for (int i = 0; i < 8; i++) {
-            ascend[i] = i + 1;
-        }
-        for (int i = 0; i <8; i++) {
-            decend[i] = 8 - i;
-        }
         int sum = 0;
 
         for (int i = 0; i < 8; i++) {
@@ -38,6 +32,5 @@ public class Main {
         else{
             System.out.println("mixed");
         }
-
     }
 }
