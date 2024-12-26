@@ -18,7 +18,7 @@ public class Main{
 
         apt = new int[N][N];
         visited = new int[N][N];
-        countPeople = new int[625];
+        countPeople = new int[313];//625까지는 안 해도 되지만 1이 한칸 씩 다 띄어져있다면 625/2칸을 해야함
         countApt = 0;
 
         for (int i = 0; i < N; i++) {
@@ -40,8 +40,8 @@ public class Main{
         }
         Arrays.sort(countPeople);
         System.out.println(countApt);
-        for (int i = 0; i < 625; i++) {
-            if(countPeople[i] !=0) {
+        for (int i = 0; i < 313; i++) {
+            if (countPeople[i] != 0) {
                 System.out.println(countPeople[i]);
             }
         }
@@ -56,7 +56,7 @@ public class Main{
             int[] current = queue.poll();
             int cx = current[0];
             int cy = current[1];
-            visited[cx][cy] = 1;
+            visited[cx][cy] = 1; //여기다가 countpeople수를 더해버리면 또 방문했던 것도 이중으로 더해짐. 저음에 방문할때 한 번, poll할때 한 번
 
             for (int i = 0; i < 4; i++) {
                 int xx = cx + nx[i];
